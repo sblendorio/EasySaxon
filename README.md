@@ -18,7 +18,7 @@ Simple transformation
 ---------------------
 * One XML input file
 * One XSL transformation file
-* A string parameter (newtag="Foo")
+* A string parameter (newtag="John Doe")
 
 ```
 SaxonFacade api = new SaxonFacade();
@@ -27,7 +27,7 @@ XdmNode input = api.getXdm(Paths.get("src/test/resources/testSource.xml"));
 XsltExecutable transform = api.getXsltExecutable(Paths.get("src/test/resources/testTransformation.xsl"));
 
 Map<String, Object> params = new TreeMap<>();
-params.put("newtag", "Ciccio Pasticcio");
+params.put("newtag", "John Doe");
 XdmNode result = api.executeTransformation(transform, input, params);
 System.out.println(result.toString());
 ```
