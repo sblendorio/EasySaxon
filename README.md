@@ -48,6 +48,5 @@ Modular transformation
     XsltExecutable transform = api.getXsltExecutable(bundle);
 
     XdmNode output = api.executeTransformation(transform, input, Collections.EMPTY_MAP);
-    System.out.println("RESULT testIncludingApp ----------------------------------------------------");
     System.out.println(output.toString());
 ```
