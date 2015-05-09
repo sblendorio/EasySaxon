@@ -20,6 +20,7 @@ Simple transformation
 * One XSL transformation file
 * A string parameter (newtag="Foo")
 
+```
     SaxonFacade api = new SaxonFacade();
 
     XdmNode input = api.getXdm(Paths.get("src/test/resources/testSource.xml"));
@@ -29,6 +30,7 @@ Simple transformation
     params.put("newtag", "Ciccio Pasticcio");
     XdmNode result = api.executeTransformation(transform, input, params);
     System.out.println(result.toString());
+```
 
 Modular transformation
 ----------------------
@@ -36,7 +38,8 @@ Modular transformation
 * Two XSL transformation file
 * Empty parameter list
 
-    SaxonFacade api = new SaxonFacade();
+```
+   SaxonFacade api = new SaxonFacade();
 
     XdmNode input = api.getXdm(Paths.get("src/test/resources/testSource.xml"));
     XsltBundle bundle = new XsltBundle(Paths.get("src/test/resources/test-main.xsl"));
@@ -47,3 +50,4 @@ Modular transformation
     XdmNode output = api.executeTransformation(transform, input, Collections.EMPTY_MAP);
     System.out.println("RESULT testIncludingApp ----------------------------------------------------");
     System.out.println(output.toString());
+```
