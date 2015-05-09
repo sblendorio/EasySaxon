@@ -5,7 +5,7 @@ Overview
 Main features
 ============
 * Use of parametric XSLT sources with automatic type detection
-* Modular transformations through the use of <xsl:import href="uri" />
+* Modular transformations through the use of **xsl:import** tag
 
 Install
 =======
