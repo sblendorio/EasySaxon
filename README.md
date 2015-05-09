@@ -35,7 +35,7 @@ System.out.println(result.toString());
 Modular transformation
 ----------------------
 * One XML input file
-* Two XSL transformation file
+* Three XSL transformation file (Entry point + 2)
 * Empty parameter list
 
 ```
@@ -50,3 +50,7 @@ XsltExecutable transform = api.getXsltExecutable(bundle);
 XdmNode output = api.executeTransformation(transform, input, Collections.EMPTY_MAP);
 System.out.println(output.toString());
 ```
+
+Samples availables in test package
+----------------------------------
+Look at **eu.sblendorio.easysaxon.test.AppTest** class for live examples
