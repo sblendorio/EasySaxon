@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            targetNamespace="http://sblendorio.eu/xsltResourceSchema"
+            xmlns:tns="http://sblendorio.eu/xsltResourceSchema"
+            xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+            elementFormDefault="qualified"
+            attributeFormDefault="unqualified"
+            jaxb:version="2.0"><!--
+            xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd"
+-->
+        
+    <xsd:element name="xsltResource">
+        <xsd:annotation>
+            <xsd:appinfo>
+                <jaxb:class name="xsltResource"/>
+            </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="primaryUri" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+                <xsd:element name="uriInfo" minOccurs="0" maxOccurs="unbounded" type="tns:UriInfo">
+                    <xsd:annotation>
+                        <xsd:appinfo>
+                            <jaxb:property name="uriInfoList"/>
+                        </xsd:appinfo>
+                    </xsd:annotation>
+                </xsd:element>
+            </xsd:sequence>            
+        </xsd:complexType>        
+    </xsd:element>
+    
+    <xsd:complexType name="UriInfo">                             
+        <xsd:sequence>       
+            <xsd:element name="uri" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+            <xsd:element name="content" minOccurs="1" maxOccurs="1" type="xsd:string"/>
+        </xsd:sequence>
+        <xsd:attribute name="origin" type="xsd:string" use="optional"/>    
+    </xsd:complexType>    
+            
+</xsd:schema>
