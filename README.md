@@ -39,7 +39,7 @@ Modular transformation
 * Empty parameter list
 
 ```
-   SaxonFacade api = new SaxonFacade();
+SaxonFacade api = new SaxonFacade();
 
 XdmNode input = api.getXdm(Paths.get("src/test/resources/testSource.xml"));
 XsltBundle bundle = new XsltBundle(Paths.get("src/test/resources/test-main.xsl"));
