@@ -1,11 +1,11 @@
 Overview
 ========
-**Saxon** is a great XSLT preprocessor, but for common needs it is quite complex to use. **EasySaxon** is a facade over Saxon that make easier the use of this great preprocessor.
+**Saxon** is a great XSLT processor, but for common needs it is quite complex to use. **EasySaxon** is a facade over Saxon that makes its use easier.
 
 Main features
 ============
 * Use of parametric XSLT sources with automatic type detection
-* Modular transformations through the use of **xsl:import** tag
+* Modular transformations through the use of `<xsl:import />` tag
 
 Install
 =======
@@ -28,14 +28,18 @@ XsltExecutable transform = api.getXsltExecutable(Paths.get("src/test/resources/t
 
 Map<String, Object> params = new TreeMap<>();
 params.put("newtag", "John Doe");
-XdmNode result = api.executeTransformation(transform, input, params);
-System.out.println(result.toString());
+
+XdmNode output = api.executeTransformation(transform, input, params);
+System.out.println(output.toString());
 ```
 
 Modular transformation
 ----------------------
 * One XML input file
-* Three XSL transformation file (Entry point + 2)
+* Three XSL transformation files (Entry point + 2):
+  * [**test-main.xsl**](https://github.com/sblendorio/EasySaxon/blob/master/src/test/resources/test-main.xsl): the entry point, using `<xsl:import href="...">`
+  * [**test-included-1.xsl**](https://github.com/sblendorio/EasySaxon/blob/master/src/test/resources/test-included-1.xsl): referenced as **uri:getData-1.xsl**
+  * [**test-included-1.xsl**](https://github.com/sblendorio/EasySaxon/blob/master/src/test/resources/test-included-2.xsl): referenced as **uri:getData-2.xsl**
 * Empty parameter list
 
 ```
@@ -51,6 +55,6 @@ XdmNode output = api.executeTransformation(transform, input, Collections.EMPTY_M
 System.out.println(output.toString());
 ```
 
-Samples availables in test package
-----------------------------------
-Look at **eu.sblendorio.easysaxon.test.AppTest** class for live examples
+Live examples and demo
+----------------------
+Look at [**eu.sblendorio.easysaxon.test.AppTest**](https://github.com/sblendorio/EasySaxon/blob/master/src/test/java/eu/sblendorio/easysaxon/test/AppTest.java) class for live examples

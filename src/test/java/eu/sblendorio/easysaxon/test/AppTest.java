@@ -34,7 +34,7 @@ public class AppTest
         XsltExecutable transform = api.getXsltExecutable(Paths.get("src/test/resources/testTransformation.xsl"));
         
         Map<String, Object> params = new TreeMap<>();
-        params.put("newtag", "Ciccio Pasticcio");
+        params.put("newtag", "John Doe");
         XdmNode result = api.executeTransformation(transform, input, params);
 
         System.out.println("RESULT ----------------------------------------------------");
