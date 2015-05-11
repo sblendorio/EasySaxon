@@ -6,8 +6,6 @@ package eu.sblendorio.easysaxon;
 //import com.sun.jersey.api.client.config.DefaultClientConfig;
 //import com.sun.jersey.api.client.filter.HTTPBasicAuthFilter;
 import eu.sblendorio.xsltresourceschema.XsltResource;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -15,7 +13,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringReader;
 import java.nio.charset.Charset;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -56,7 +53,6 @@ import net.sf.saxon.s9api.XsltTransformer;
 import net.sf.saxon.xqj.SaxonXQConnection;
 import net.sf.saxon.xqj.SaxonXQDataSource;
 import net.sf.saxon.xqj.SaxonXQItem;
-import org.springframework.util.Assert;
 
 public class SaxonFacade {
 
@@ -382,26 +378,4 @@ public class SaxonFacade {
         return result;
     }
 
-    public static String readStringFromPath(Path path) throws IOException {
-        //build a Stream Reader, it can read char by char
-        //build a buffered Reader, so that i can read whole line at once
-        Assert.isTrue(Files.exists(path), "expected isTrue Files.exists(path). for path=" + path);
-        try (BufferedReader bReader = Files.newBufferedReader(path, Charset.forName("utf-8"));) {
-
-            String line;
-            StringBuilder builder = new StringBuilder();
-            while ((line = bReader.readLine()) != null) {  //Read till end
-                builder.append(line);
-            }
-            //iStream.close();
-            return builder.toString();
-        }
-    }
-
-    public static void writeStringToPath(Object s, Path path) throws IOException {
-        Files.createDirectories(path.getParent());
-        try (BufferedWriter bWriter = Files.newBufferedWriter(path, Charset.forName("utf-8"));) {
-            bWriter.write(s.toString());
-        }
-    }
 }
