@@ -9,7 +9,12 @@ Main features
 
 Install
 =======
-The package is built through MAVEN2, so you just have to run **clean** and **build** tasks.
+The package is built through MAVEN2, so you just have to run **clean**, **compile** and **package** tasks:
+```
+mvn clean
+mvn compile
+mvn package
+```
 
 Examples of use
 ==============
