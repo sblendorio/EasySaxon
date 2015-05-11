@@ -15,6 +15,7 @@ mvn clean
 mvn compile
 mvn package
 ```
+...then you will find **easysaxon-1.0-SNAPSHOT.jar** in newly created **target** folder.
 
 Examples of use
 ==============
