@@ -45,7 +45,7 @@ Modular transformation
 * Three XSL transformation files (Entry point + 2):
   * [**test-main.xsl**](https://github.com/sblendorio/EasySaxon/blob/master/src/test/resources/test-main.xsl): the entry point, using `<xsl:import href="...">`
   * [**test-included-1.xsl**](https://github.com/sblendorio/EasySaxon/blob/master/src/test/resources/test-included-1.xsl): referenced as **uri:getData-1.xsl**
-  * [**test-included-1.xsl**](https://github.com/sblendorio/EasySaxon/blob/master/src/test/resources/test-included-2.xsl): referenced as **uri:getData-2.xsl**
+  * [**test-included-2.xsl**](https://github.com/sblendorio/EasySaxon/blob/master/src/test/resources/test-included-2.xsl): referenced as **uri:getData-2.xsl**
 * Empty parameter list
 
 ```
