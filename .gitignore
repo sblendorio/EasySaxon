@@ -1,3 +1,7 @@
 /nb-configuration.xml
 /target
+.idea
+.project
+.classpath
+.vscode
 
